@@ -1,13 +1,8 @@
 import React from 'react';
-import './style.css';
 
 const Maps = () => {
   return (
-    <div className="Maps">
-      <header className="Maps-header">
-        <p>test</p>
-      </header>
-    </div>
+    <p>開発中</p>
   )
 };
 

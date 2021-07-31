@@ -1,10 +1,9 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import { Grid, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
 import Logo from '../../component/logo';
-import './style.css';
 
 const useStyles = makeStyles({
   button: {
@@ -15,9 +14,9 @@ const useStyles = makeStyles({
 function Root() {
   const style = useStyles();
   return (
-    <div className="Root">
-      <header className="Root-header">
-        <Logo />
+    <>
+      <Logo />
+      <Grid spacing={8}>
         <Button
           className={style.button}
           variant="contained"
@@ -26,8 +25,16 @@ function Root() {
         >
           配布マップ
         </Button>
-      </header>
-    </div>
+        <Button
+          className={style.button}
+          variant="contained"
+          component={Link}
+          to="/world/color"
+        >
+          カラーツール
+        </Button>
+      </Grid>
+    </>
   );
 }
 
