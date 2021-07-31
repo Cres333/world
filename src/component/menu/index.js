@@ -18,7 +18,7 @@ const Menu = () => {
       <List>
         <ListItem button component={Link} to="/world/maps" onClick={onClick}>
           <MapIcon style={{ marginRight: 8 }} />
-          <ListItemText primary="配布マップ一覧"/>
+          <ListItemText primary="JE版 配布マップ一覧"/>
         </ListItem>
       </List>
       <List>
