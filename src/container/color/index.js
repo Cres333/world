@@ -1,7 +1,9 @@
-import React, { useState, useCallback } from 'react';
+import React, { useContext, useEffect, useState, useCallback } from 'react';
 import { SketchPicker } from 'react-color';
 import { TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+
+import { WorldContext } from '../root';
 
 const useStyles = makeStyles({
   root: {
@@ -11,8 +13,13 @@ const useStyles = makeStyles({
 
 const ColorTool = () => {
   const style = useStyles();
+  const { dispatch } = useContext(WorldContext);
   const [color, SetColor] = useState('#FFFFFF');
   const intColor = parseInt(color.replace('#', ''), 16);
+  
+  useEffect(() => {
+    dispatch({ type: 'scene', payload: 'カラーツール' });
+  }, [dispatch]);
 
   const updateColor = useCallback((color) => {
     SetColor(color.hex);

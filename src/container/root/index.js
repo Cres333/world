@@ -1,40 +1,34 @@
-import React from 'react';
-import { Grid, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
+import React, { useReducer } from 'react';
 
-import Logo from '../../component/logo';
+import Header from '../../component/header';
+import Menu from '../../component/menu';
 
-const useStyles = makeStyles({
-  button: {
-    margin: 8,
-  },
-});
+export const WorldContext = React.createContext();
 
-function Root() {
-  const style = useStyles();
+const initialState = {
+  menu: false,
+  title: '',
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'menuToggle':
+      return { ...state, menu: !state.menu };
+    case 'scene':
+      return { ...state, title: action.payload };
+    default:
+      return state;
+  }
+};
+
+const Root = ({ children }) => {
+  const [store, dispatch] = useReducer(reducer, initialState);
   return (
-    <>
-      <Logo />
-      <Grid spacing={8}>
-        <Button
-          className={style.button}
-          variant="contained"
-          component={Link}
-          to="/world/maps"
-        >
-          配布マップ
-        </Button>
-        <Button
-          className={style.button}
-          variant="contained"
-          component={Link}
-          to="/world/color"
-        >
-          カラーツール
-        </Button>
-      </Grid>
-    </>
+    <WorldContext.Provider value={{ store, dispatch }}>
+      <Header />
+      <Menu />
+      {children}
+    </WorldContext.Provider>
   );
 }
 
