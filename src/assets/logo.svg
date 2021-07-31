@@ -6,7 +6,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="1.1 (c68e22c387, 2021-05-23)"
-   sodipodi:docname="logo2.svg"
+   sodipodi:docname="logo.svg"
    inkscape:export-filename="X:\Misc\nico\logo192.png"
    inkscape:export-xdpi="17.482777"
    inkscape:export-ydpi="17.482777"
@@ -85,11 +85,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="-146"
-     inkscape:cy="491"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="176.06959"
+     inkscape:cy="655.13443"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer6"
      showgrid="true"
      units="px"
      inkscape:snap-page="false"
@@ -274,8 +274,9 @@
      transform="translate(-114.261,-3.4005937)">
     <path
        style="opacity:1;fill:#f2f2f2;fill-opacity:1;stroke:#f2f2f2;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 354.54166,150.8125 C 312.20833,156.10416 301.625,103.1875 285.75,92.604166 269.875,82.020832 251.35416,82.020832 238.125,100.54167 c -13.22917,18.52083 -31.75,18.52083 -31.75,18.52083 v 0 c 0,0 52.91666,0 52.91666,13.22916 0,13.22917 0,68.79167 21.16667,82.02084 21.16667,13.22916 23.8125,31.75 23.8125,31.75 0,0 50.27083,-34.39584 55.5625,-55.5625 5.29167,-21.16667 -5.29167,-39.6875 -5.29167,-39.6875 z"
+       d="M 355.86458,149.48958 C 313.53125,154.78124 301.625,103.1875 285.75,92.604166 269.875,82.020832 251.35416,82.020832 238.125,100.54167 c -13.22917,18.52083 -31.75,18.52083 -31.75,18.52083 v 0 c 0,0 52.91666,0 52.91666,13.22916 0,13.22917 0,68.79167 21.16667,82.02084 21.16667,13.22916 23.8125,34.39583 23.8125,34.39583 0,0 50.27083,-37.04167 55.5625,-58.20833 5.29167,-21.16667 -4.68407,-50.31754 -3.96875,-41.01042 z"
        id="path3833"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssccsscsc" />
   </g>
 </svg>
