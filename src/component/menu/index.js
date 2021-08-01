@@ -16,13 +16,13 @@ const Menu = () => {
   return (
     <Drawer open={store.menu}>
       <List>
-        <ListItem button component={Link} to="/world/maps" onClick={onClick}>
+        <ListItem button component={Link} to="/world/maps" replace onClick={onClick}>
           <MapIcon style={{ marginRight: 8 }} />
           <ListItemText primary="JE版 配布マップ一覧"/>
         </ListItem>
       </List>
       <List>
-        <ListItem button component={Link} to="/world/color" onClick={onClick}>
+        <ListItem button component={Link} to="/world/color" replace onClick={onClick}>
           <ColorLensIcon style={{ marginRight: 8 }} />
           <ListItemText primary="カラーツール"/>
         </ListItem>
