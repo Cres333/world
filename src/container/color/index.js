@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState, useCallback } from 'react';
 import { SketchPicker } from 'react-color';
-import { TextField } from '@material-ui/core';
+import { Typography, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { WorldContext } from '../root';
@@ -33,6 +33,7 @@ const ColorTool = () => {
 
   return (
     <>
+      <Typography variant="h6" color="textSecondary">{'バイオームの色に変換してくれるやつ(適当版)'}</Typography>
       <SketchPicker color={color} onChange={updateColor} />
       <TextField className={style.field} label="Biome Color" variant="filled" value={intColor} onChange={convertColor} />
     </>

@@ -33,7 +33,8 @@ const Menu = () => {
         <ChevronLeftIcon />
       </IconButton>
       <Divider />
-      <List component="nav" aria-labelledby="test" subhader={<ListSubheader component="div" id="test">test</ListSubheader>}>
+      <List>
+        <ListSubheader component="div">{'Information'}</ListSubheader>
         <ListItem button component={Link} to={PageTable['maps'].path} replace onClick={onClick}>
           <ListItemIcon>
             <MapIcon />
@@ -43,6 +44,7 @@ const Menu = () => {
       </List>
       <Divider />
       <List>
+        <ListSubheader component="div">{'Tools'}</ListSubheader>
         <ListItem button component={Link} to={PageTable['color'].path} replace onClick={onClick}>
           <ListItemIcon>
             <ColorLensIcon />
