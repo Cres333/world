@@ -7,7 +7,7 @@ export const WorldContext = React.createContext();
 
 const initialState = {
   menu: false,
-  title: '',
+  scene: '',
 };
 
 const reducer = (state, action) => {
@@ -15,7 +15,7 @@ const reducer = (state, action) => {
     case 'menuToggle':
       return { ...state, menu: !state.menu };
     case 'scene':
-      return { ...state, title: action.payload };
+      return { ...state, scene: action.payload };
     default:
       return state;
   }

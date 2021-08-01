@@ -8,14 +8,16 @@ import Top from './container/top';
 import Maps from './container/maps';
 import Color from './container/color';
 
+import { PageTable } from './utils/constant';
+
 const App = () => {
   return (
     <BrowserRouter>
       <Root>
         <Switch>
-          <Route exact path="/world/" component={Top} />
-          <Route exact path="/world/maps" component={Maps} />
-          <Route exact path="/world/color" component={Color} />
+          <Route exact path={PageTable['top'].path} component={Top} />
+          <Route exact path={PageTable['maps'].path} component={Maps} />
+          <Route exact path={PageTable['color'].path} component={Color} />
         </Switch>
       </Root>
     </BrowserRouter>

@@ -3,9 +3,12 @@ import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import { WorldContext } from '../../container/root';
+import { PageTable } from '../../utils/constant';
 
 const Header = () => {
   const { store, dispatch } = useContext(WorldContext);
+  const title = PageTable?.[store.scene]?.title ?? '';
+
   return (
     <AppBar>
       <Toolbar>
@@ -13,7 +16,7 @@ const Header = () => {
           <MenuIcon />
         </IconButton>
         <Typography style={{ marginRight: 16 }} variant="h6" color="inherit">Keiduki Minecraft World</Typography>
-        <Typography variant="h6" color="inherit">{store.title}</Typography>
+        <Typography variant="h6" color="inherit">{title}</Typography>
       </Toolbar>
     </AppBar>
   )

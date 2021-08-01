@@ -18,7 +18,7 @@ const ColorTool = () => {
   const intColor = parseInt(color.replace('#', ''), 16);
   
   useEffect(() => {
-    dispatch({ type: 'scene', payload: 'カラーツール' });
+    dispatch({ type: 'scene', payload: 'color' });
   }, [dispatch]);
 
   const updateColor = useCallback((color) => {

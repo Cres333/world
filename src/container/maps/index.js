@@ -55,7 +55,7 @@ const Maps = () => {
   const { dispatch } = useContext(WorldContext);
 
   useEffect(() => {
-    dispatch({ type: 'scene', payload: 'JE版 配布マップ一覧' });
+    dispatch({ type: 'scene', payload: 'maps' });
   }, [dispatch]);
 
   const MapCard = maps.map((value, index) => <Map {...value} index={index} styles={styles} />);
