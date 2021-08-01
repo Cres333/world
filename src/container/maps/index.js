@@ -6,6 +6,11 @@ import maps from '../../assets/maps';
 import { WorldContext } from '../root';
 
 const useStyles = makeStyles({
+  card: {
+    width: 300,
+    height: 200,
+    backgroundColor: '#ccddff',
+  },
   version: {
     fontSize: 14,
   },
@@ -39,7 +44,7 @@ const Map = React.memo((props) => {
       {props?.popular && <Chip className={props.styles.chip} label={'大人気企画'} color="secondary" />}
       {props?.bug && <Chip className={props.styles.chip} label={'バグ多め'} />}
       <Card >
-        <CardContent style={{ width: 300, height: 200, backgroundColor: '#ccddff' }} >
+        <CardContent className={props.styles.card} >
           <Typography className={props.styles.title}>{props.title}</Typography>
           <Typography className={props.styles.info} color="textSecondary" gutterBottom>{'- ジャンル: ' + props.junre}</Typography>
           <Typography className={props.styles.info} color="textSecondary" gutterBottom>{'- プレイ人数: ' + props.player}</Typography>
@@ -66,7 +71,7 @@ const Maps = () => {
 
   const MapCard = maps.map((value, index) => <Map {...value} index={index} styles={styles} />);
   return (
-    <Grid container spacing={2} direction="row" justifyContent="center" alignItems="center" style={{ marginTop: 100}}>
+    <Grid container spacing={2} direction="row" justifyContent="center" alignItems="center" >
       {MapCard}
     </Grid>
   );

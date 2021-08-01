@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { WorldContext } from '../root';
 
 const useStyles = makeStyles({
-  root: {
+  field: {
     margin: 16,
   },
 });
@@ -34,7 +34,7 @@ const ColorTool = () => {
   return (
     <>
       <SketchPicker color={color} onChange={updateColor} />
-      <TextField className={style.root} label="Biome Color" variant="filled" value={intColor} onChange={convertColor} />
+      <TextField className={style.field} label="Biome Color" variant="filled" value={intColor} onChange={convertColor} />
     </>
   )
 };

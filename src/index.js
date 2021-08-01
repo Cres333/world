@@ -27,9 +27,9 @@ const App = () => {
 ReactDOM.render(
   <React.StrictMode>  
     <div className="App">
-      <header className="App-header">
+      <body className="App-body">
         <App />
-      </header>
+      </body>
     </div>
   </React.StrictMode>,
   document.getElementById('app')
