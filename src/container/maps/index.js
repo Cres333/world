@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useCallback } from 'react';
-import { Grid, Card, CardContent, CardActions, Button, Typography } from '@material-ui/core';
+import { Grid, Chip, Card, CardContent, CardActions, Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import maps from '../../assets/maps';
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
   title: {
     marginTop: 4,
     marginBottom: 8,
-    fontSize: 24,
+    fontSize: 22,
   },
   info: {
     fontSize: 14,
@@ -21,6 +21,9 @@ const useStyles = makeStyles({
   description: {
     marginTop: 8,
     textAlign: 'left',
+  },
+  chip: {
+    marginRight: 4,
   },
 });
 
@@ -31,9 +34,12 @@ const Map = React.memo((props) => {
 
   return (
     <Grid item key={`card-${props.index}`}>
+      <Chip className={props.styles.chip} label={`バージョン: ${props.version}`} color="primary" />
+      {props?.first && <Chip className={props.styles.chip} label={'初心者向け'} color="secondary" />}
+      {props?.popular && <Chip className={props.styles.chip} label={'大人気企画'} color="secondary" />}
+      {props?.bug && <Chip className={props.styles.chip} label={'バグ多め'} />}
       <Card >
-        <CardContent style={{ width: 400, height: 200, backgroundColor: '#ccddff' }} >
-          <Typography className={props.styles.small} color="textSecondary" gutterBottom>{'バージョン: ' + props.version}</Typography>
+        <CardContent style={{ width: 300, height: 200, backgroundColor: '#ccddff' }} >
           <Typography className={props.styles.title}>{props.title}</Typography>
           <Typography className={props.styles.info} color="textSecondary" gutterBottom>{'- ジャンル: ' + props.junre}</Typography>
           <Typography className={props.styles.info} color="textSecondary" gutterBottom>{'- プレイ人数: ' + props.player}</Typography>

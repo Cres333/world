@@ -7,6 +7,7 @@ const maps = [
     time: '1時間',
     description: '気がついたら檻の中。このままでは溶岩に真っ逆さまに落ちていってしまう！そこのあなた！私を助けて！',
     url: 'https://www.dropbox.com/s/5vj1j1qlxm7sxzq/%E5%BE%85%E3%83%81%E5%B7%A5%E5%A0%B4_1.07.zip?dl=1',
+    first: true,
   },
   {
     title: 'マイクラスポーツフェス',
@@ -16,6 +17,7 @@ const maps = [
     time: '-',
     description: 'マイクラの世界でテッペンを獲れ！',
     url: 'https://ux.getuploader.com/je_map/download/7',
+    popular: true,
   },
   {
     title: '怪盗1911',
@@ -34,6 +36,7 @@ const maps = [
     time: '-',
     description: 'みんなに伝わるように建築して、頑張って何が作られたのか察しよう！(第三弾)',
     url: 'https://www.dropbox.com/s/obuz3a7qwzxfpi2/Builders_III_ver1.11.zip?dl=1',
+    popular: true,
   },
   {
     title: '學幽譚',
@@ -61,6 +64,7 @@ const maps = [
     time: '1時間',
     description: '忘れ去られた絵本の内容を思い出す旅に出る、ほのぼの初心者向けマップ',
     url: 'https://www.dropbox.com/sh/1z1tg0gzxmm69vg/AAA0DPJ5HgjX7M5qThFSWcdxa?dl=1',
+    first: true,
   },
   {
     title: '建築伝言ゲーム / Builders-Ex',
@@ -115,6 +119,7 @@ const maps = [
     time: '-',
     description: 'シンプルなミニゲーム集\n(バグ多めのため注意)',
     url: 'https://www.dropbox.com/sh/egok6jgl3ck0e7t/AABhoiQ_Wn9TYOf9Llji0PGZa?dl=1',
+    bug: true,
   },
   {
     title: '小学校からの脱出',
@@ -124,6 +129,7 @@ const maps = [
     time: '1時間',
     description: '小学校の様々な場所に隠された謎を解き、授業が終わる前に脱出する初心者向けマップ',
     url: 'https://www.dropbox.com/sh/1r0fesnojxcnxl9/AAByOvUtwu7KIAk7v8gA3gVea?dl=1',
+    first: true,
   },
   {
     title: '井戸と20の扉',
@@ -169,6 +175,7 @@ const maps = [
     time: '3時間',
     description: '様々なお題に対して、８つの謎を解け！(バグ多めのため注意)',
     url: 'https://www.dropbox.com/sh/nfqk0hbw9v99wtd/AABqU_PB1NXH_O1XcNIyQZJ_a?dl=1',
+    bug: true,
   },
   {
     title: '脱出迷宮',
