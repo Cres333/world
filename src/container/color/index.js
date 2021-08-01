@@ -1,11 +1,17 @@
 import React, { useContext, useEffect, useState, useCallback } from 'react';
 import { SketchPicker } from 'react-color';
-import { Typography, TextField } from '@material-ui/core';
+import { Paper, Typography, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { WorldContext } from '../root';
 
 const useStyles = makeStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   field: {
     margin: 16,
   },
@@ -34,8 +40,11 @@ const ColorTool = () => {
   return (
     <>
       <Typography variant="h6" color="textSecondary">{'バイオームの色に変換してくれるやつ(適当版)'}</Typography>
-      <SketchPicker color={color} onChange={updateColor} />
       <TextField className={style.field} label="Biome Color" variant="filled" value={intColor} onChange={convertColor} />
+      <div className={style.root}>
+        <SketchPicker color={color} onChange={updateColor} />
+        <Paper elevation={3} style={{ margin: 8, width: 256, height: 256, backgroundColor: color }}/>
+      </div>
     </>
   )
 };
