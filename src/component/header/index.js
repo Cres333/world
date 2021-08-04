@@ -15,7 +15,7 @@ const Header = () => {
         <IconButton style={{ marginRight: 8 }} onClick={() => { dispatch({ type: 'menuToggle' }) }}>
           <MenuIcon />
         </IconButton>
-        <Typography style={{ marginRight: 16 }} variant="h6" color="inherit">Keiduki Minecraft World</Typography>
+        <Typography style={{ marginRight: 16 }} variant="h6" color="inherit">Keiduki Minecraft Note</Typography>
         <Typography variant="h6" color="inherit">{title}</Typography>
       </Toolbar>
     </AppBar>
