@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import './style.css';
 
 import Root from './container/root';
@@ -11,14 +11,14 @@ import { PageTable } from './utils/constant';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Root>
         <Switch>
           <Route exact path={PageTable['maps'].path} component={Maps} />
           <Route exact path={PageTable['color'].path} component={Color} />
         </Switch>
       </Root>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
