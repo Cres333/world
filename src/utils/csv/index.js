@@ -1,5 +1,5 @@
 export const convertCsv = (csvStr) => {
-  const csvArray = csvStr.split('\r\n');
+  const csvArray = csvStr.split('\n');
   const keys = csvArray[0].split(',');
   const values = csvArray.map((value, index) => {
     if (index === 0 ) return false;

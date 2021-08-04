@@ -72,7 +72,7 @@ const Maps = () => {
     dispatch({ type: 'scene', payload: 'maps' });
 
     const fetchData = (async () => {
-      const data = await fetchCsv('world/assets/maps.csv');
+      const data = await fetchCsv('/world/assets/maps.csv');
       SetMaps(data);
     });
     fetchData();
