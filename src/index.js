@@ -25,9 +25,7 @@ const App = () => {
 ReactDOM.render(
   <React.StrictMode>  
     <div className="App">
-      <body className="App-body">
-        <App />
-      </body>
+      <App />
     </div>
   </React.StrictMode>,
   document.getElementById('app')

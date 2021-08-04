@@ -14,9 +14,6 @@ code {
 
 .App {
   text-align: center;
-}
-
-.App-body {
   background-color: #fff;
   min-height: 100vh;
   display: flex;

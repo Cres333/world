@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useCallback } from 'react';
+import React, { useContext, useState, useEffect, useCallback } from 'react';
 import { Grid, Chip, Card, CardContent, CardActions, Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import maps from '../../assets/maps';
+import { fetchCsv } from '../../utils/csv';
 import { WorldContext } from '../root';
 
 const useStyles = makeStyles({
@@ -37,12 +37,14 @@ const Map = React.memo((props) => {
     window.open(props.url);
   }, [props.url]);
 
+  const version = props.min?.length > 0 ? `${props.min} ～ ${props.version}` : props.version;
+
   return (
-    <Grid item key={`card-${props.index}`}>
-      <Chip className={props.styles.chip} label={`バージョン: ${props.version}`} color="primary" />
-      {props?.first && <Chip className={props.styles.chip} label={'初心者向け'} color="secondary" />}
-      {props?.popular && <Chip className={props.styles.chip} label={'大人気企画'} color="secondary" />}
-      {props?.bug && <Chip className={props.styles.chip} label={'バグ多め'} />}
+    <Grid item>
+      <Chip className={props.styles.chip} label={`バージョン: ${version}`} color="primary" />
+      {props?.first === '1' && <Chip className={props.styles.chip} label={'初心者向け'} color="secondary" />}
+      {props?.popular === '1' && <Chip className={props.styles.chip} label={'大人気企画'} color="secondary" />}
+      {props?.bug === '1' && <Chip className={props.styles.chip} label={'バグ多め'} />}
       <Card >
         <CardContent className={props.styles.card} >
           <Typography className={props.styles.title}>{props.title}</Typography>
@@ -64,12 +66,19 @@ const Map = React.memo((props) => {
 const Maps = () => {
   const styles = useStyles();
   const { dispatch } = useContext(WorldContext);
+  const [maps, SetMaps] = useState([]);
 
   useEffect(() => {
     dispatch({ type: 'scene', payload: 'maps' });
+
+    const fetchData = (async () => {
+      const data = await fetchCsv('world/assets/maps.csv');
+      SetMaps(data);
+    });
+    fetchData();
   }, [dispatch]);
 
-  const MapCard = maps.map((value, index) => <Map {...value} index={index} styles={styles} />);
+  const MapCard = maps.map((value, index) => <Map {...value} key={`map${index}`} styles={styles} />);
   return (
     <Grid container spacing={2} direction="row" justifyContent="center" alignItems="center" >
       {MapCard}
