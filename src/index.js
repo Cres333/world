@@ -5,7 +5,8 @@ import './style.css';
 
 import Root from './container/root';
 import Maps from './container/maps';
-import Color from './container/color';
+import Color from './container/tools/color';
+import Rule from './container/tools/rule';
 
 import { PageTable } from './utils/constant';
 
@@ -15,6 +16,7 @@ const App = () => {
       <Root>
         <Switch>
           <Route exact path={PageTable['maps'].path} component={Maps} />
+          <Route exact path={PageTable['rule'].path} component={Rule} />
           <Route exact path={PageTable['color'].path} component={Color} />
         </Switch>
       </Root>

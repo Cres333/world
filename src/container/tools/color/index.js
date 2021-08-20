@@ -3,7 +3,7 @@ import { SketchPicker } from 'react-color';
 import { Paper, Typography, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { WorldContext } from '../root';
+import { WorldContext } from '../../root';
 
 const useStyles = makeStyles({
   root: {

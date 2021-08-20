@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import MapIcon from '@material-ui/icons/Map';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ColorLensIcon from '@material-ui/icons/ColorLens';
+import TuneIcon from '@material-ui/icons/Tune';
 
 import { WorldContext } from '../../container/root';
 import { PageTable } from '../../utils/constant';
@@ -45,6 +46,12 @@ const Menu = () => {
       <Divider />
       <List>
         <ListSubheader component="div">{'Tools'}</ListSubheader>
+        <ListItem button component={Link} to={PageTable['rule'].path} replace onClick={onClick}>
+          <ListItemIcon>
+            <TuneIcon />
+          </ListItemIcon>
+          <ListItemText primary={PageTable['rule'].title} />
+        </ListItem>
         <ListItem button component={Link} to={PageTable['color'].path} replace onClick={onClick}>
           <ListItemIcon>
             <ColorLensIcon />
