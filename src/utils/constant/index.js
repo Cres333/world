@@ -1,4 +1,4 @@
 export const PageTable = {
-  maps: { title: 'JE版 配布マップ一覧', path: '/' },
+  maps: { title: 'JE 配布マップ一覧', path: '/' },
   color: { title: 'カラーツール', path: '/color' },
 };
