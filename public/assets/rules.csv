@@ -34,3 +34,11 @@ gamerule,showDeathMessages,true,1.12,プレイヤーが倒れた時にテキス�
 gamerule,spawnRadius,10,1.12,初期スポーン地点でスポーンさせる範囲,0だとsetworldspawnで設定した地点からずれない,,0
 gamerule,spectatorsGenerateChunks,true,1.12,スペクテイターモードのプレイヤーにもチャンクを生成させる,,,true
 gamerule,universalAnger,false,1.16,怒っている中立モブに、怒っている対象付近のプレイヤーにも攻撃させる,,,false
+other,difficulty,easy,1.12,マップの難易度設定,値: peaceful | easy | normal | hard,,peaceful
+other,defaultgamemode,survival,1.12,初回ログイン時のゲームモード設定,値: survival | adventure | creative | spectator,,adventure
+other,gamemode,survival @a,1.12,現在ログインしているプレイヤーのゲームモードを設定,値: survival | adventure | creative | spectator,,adventure @a
+other,setworldspawn,0 0 0,1.12,初回ログイン時のスポーン地点を設定,,,0 0 0
+other,spawnpoint,@a 0 0 0,1.12,現在ログインしているプレイヤーのスポーン地点を設定,,,@a 0 0 0
+other,time set,day,1.12,現在のゲーム内時刻を設定,値: day | noon | night | midnight | tick数,6000(tick)は太陽が真上に来る時間,6000
+other,weather,clear,1.12,現在の天気を設定,値: clear | rain | thunder,,clear
+other,forceload add,0 0 0 0,1.14,強制的にロードをし続けるチャンクを追加,値: <x> <z> <x2> <z2>,,0 0 0 0

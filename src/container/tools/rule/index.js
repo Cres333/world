@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { FormControl, Select, MenuItem, Button, TextField } from '@material-ui/core';
+import { FormControl, FormControlLabel, Checkbox, Select, MenuItem, Button, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
@@ -14,24 +14,33 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     minWidth: 120,
   },
+  copy: {
+    marginLeft: 36,
+    minWidth: 120,
+  },
   field: {
     margin: 16,
+    backgroundColor: '#f5f5f5',
+  },
+  text: {
+    color: '#657b83',
   },
 }));
 
-const convertMcFunctionText = (data, version, preset) => {
+const convertMcFunctionText = (data, version, preset, other) => {
   const textData = data
     .filter(item => parseFloat(item.version) <= version)
+    .filter(item => other ? true : item.type === 'gamerule')
     .map(item => {
       console.log(`${JSON.stringify(item)}`);
       const title = `## ${item.desc}`;
       const note = (() => {
-        if (item.note2) return `# ${item.note1}\n # ${item.note2}`;
+        if (item.note2) return `# ${item.note1}\n# ${item.note2}`;
         if (item.note1) return `# ${item.note1}`;
         return null;
       })();
       const def = `# 初期値: ${item.default}`;
-      const code = `gamerule ${item.key} ${item[preset]}`
+      const code = item.type === 'gamerule' ? `gamerule ${item.key} ${item[preset]}` : `# ${item.key} ${item[preset]}`;
 
       if (note) {
         return `${title}\n${note}\n${def}\n${code}`;
@@ -44,22 +53,26 @@ const convertMcFunctionText = (data, version, preset) => {
 
 const RuleTool = () => {
   const style = useStyles();
+  const [data, SetData] = useState([]);
   const [version, SetVersion] = useState(1.17);
   const [preset, SetPreset] = useState('preset-world');
+  const [other, SetOther] = useState(true);
   const [value, SetValue] = useState('');
   const { dispatch } = useContext(WorldContext);
 
   useEffect(() => {
     dispatch({ type: 'scene', payload: 'rule' });
+
+    const fetchData = (async () => {
+      const data = await fetchCsv('/world/assets/rules.csv');
+      SetData(data);
+    });
+    fetchData();
   }, [dispatch]);
 
   useEffect(() => {
-    const fetchData = (async () => {
-      const data = await fetchCsv('/world/assets/rules.csv');
-      SetValue(convertMcFunctionText(data, version, preset));
-    });
-    fetchData();
-  }, [version, preset]);
+    SetValue(convertMcFunctionText(data, version, preset, other));
+  }, [data, version, preset, other]);
 
   return (
     <>
@@ -76,11 +89,21 @@ const RuleTool = () => {
         </FormControl>
         <FormControl className={style.form}>
           <Select value={preset} onChange={e => SetPreset(e.target.value)}>
-            <MenuItem value="default">デフォルト</MenuItem>
+            <MenuItem value="default">デフォルト値</MenuItem>
             <MenuItem value="preset-world">マップ作成用</MenuItem>
           </Select>
         </FormControl>
-        <FormControl className={style.form}>
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={other}
+              onChange={(e) => SetOther(e.target.checked)}
+            />
+          }
+          label="gamerule以外も追加"
+          labelPlacement="start"
+        />
+        <FormControl className={style.copy}>
           <CopyToClipboard text={value}>
             <Button variant="contained">コピー</Button>
           </CopyToClipboard>
@@ -88,10 +111,12 @@ const RuleTool = () => {
       </div>
       <TextField
         className={style.field}
-        label="rules.mcfunction"
         variant="outlined"
         value={value}
-        InputProps={{ readOnly: true }}
+        InputProps={{ 
+          readOnly: true,
+          className: style.text,
+         }}
         multiline
         fullWidth
       />
