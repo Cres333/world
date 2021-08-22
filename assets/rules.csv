@@ -27,7 +27,7 @@ gamerule,maxEntityCramming,24,1.12,モブやプレイヤーが1ブロック以�
 gamerule,mobGriefing,true,1.12,モブが行動することで設置ブロックを変更、アイテムを回収させる,村人の繁殖やTNTによる破壊も同じくこの設定,,false
 gamerule,naturalRegeneration,true,1.12,空腹度が満たされている時に、自然に体力を回復させる,,,true
 gamerule,playersSleepingPercentage,100,1.17,夜を越すために必要な、プレイヤーがベッドで寝ている人数のパーセンテージ,0だと一瞬で朝になり、101以上だと朝にならない,,101
-gamerule,randomTickSpeed,3,1.12,ランダムで雪や氷、植物を成長させる1チャンクあたりのtickの間隔,0だと成長させない,,0
+gamerule,randomTickSpeed,3,1.12,ランダムで雪や氷、植物を成長させる１チャンクあたりのtickの間隔,0だと成長させない,,0
 gamerule,reducedDebugInfo,false,1.12,デバッグ画面(F3)にすべての情報を表示させる,falseだと座標や方角が見えなくなる,ヒットボックス(F3+B)やチャンク(F3+G)も見えなくなる,false
 gamerule,sendCommandFeedback,true,1.12,プレイヤーが実行したコマンドをテキストチャットに表示させる,,,false
 gamerule,showDeathMessages,true,1.12,プレイヤーが倒れた時にテキストチャットにメッセージを表示させる,,,false
