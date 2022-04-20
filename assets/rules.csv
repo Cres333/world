@@ -15,6 +15,7 @@ gamerule,doMobSpawning,true,1.12,モブを自然にスポーンさせる,スポ�
 gamerule,doPatrolSpawning,true,1.15,略奪隊を自然にスポーンさせる,略奪隊はヴィンディケーターとピリジャーで構成された集団,,false
 gamerule,doTileDrops,true,1.12,ブロックを壊した時にアイテムを落とさせる,falseでもチェストなどは中身のアイテムだけ落とす,シュルカーボックスは中身ごと消え、アーマースタンドの装備も消える,false
 gamerule,doTraderSpawning,true,1.15,行商人を自然にスポーンさせる,,,false
+gamerule,doWardenSpawning,true,1.19,ウォーデンを自然にスポーンさせる,,,false
 gamerule,doWeatherCycle,true,1.12,天候（晴れ、雨、雷雨）が自然に変化させる,,,false
 gamerule,drowningDamage,true,1.15,プレイヤーが溺れたときにダメージを受けさせる,酸素ゲージは減っていく,,false
 gamerule,fallDamage,true,1.15,プレイヤーに落下ダメージを受けさせる,,,false
