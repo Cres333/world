@@ -54,7 +54,7 @@ const convertMcFunctionText = (data, version, preset, other) => {
 const RuleTool = () => {
   const style = useStyles();
   const [data, SetData] = useState([]);
-  const [version, SetVersion] = useState(1.17);
+  const [version, SetVersion] = useState(1.18);
   const [preset, SetPreset] = useState('preset-world');
   const [other, SetOther] = useState(true);
   const [value, SetValue] = useState('');
@@ -85,6 +85,8 @@ const RuleTool = () => {
             <MenuItem value={1.15}>ver 1.15</MenuItem>
             <MenuItem value={1.16}>ver 1.16</MenuItem>
             <MenuItem value={1.17}>ver 1.17</MenuItem>
+            <MenuItem value={1.18}>ver 1.18</MenuItem>
+            <MenuItem value={1.19}>ver 1.19</MenuItem>
           </Select>
         </FormControl>
         <FormControl className={style.form}>
